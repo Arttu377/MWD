@@ -48,6 +48,8 @@ body {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
 }
 
 /* Medium size background (500px-1090px) */
@@ -61,7 +63,10 @@ body {
 @media (max-width: 500px) {
     body {
         background-image: url('Lataukset/hintalaskurimobile.png');
+        background-attachment: fixed;
         background-color: #1a1a1a;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
     }
 }
 

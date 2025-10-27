@@ -84,12 +84,20 @@ body {
     font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     line-height: 1.6;
     color: #ffffff;
-    background: url('Lataukset/hero.png') center/cover no-repeat fixed;
+    background: url('Lataukset/hero.png') center/cover no-repeat;
     background-color: #1a1a1a;
+    background-attachment: fixed;
     margin: 0;
     padding: 0;
     width: 100%;
     overflow-x: hidden;
+}
+
+/* Better mobile support for background-attachment */
+@supports (background-attachment: fixed) {
+    body {
+        background-attachment: fixed;
+    }
 }
 
 html {
@@ -1205,6 +1213,8 @@ a {
         background-attachment: fixed;
         background-repeat: no-repeat;
         background-color: #1a1a1a;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
     }
 }
 
@@ -1340,6 +1350,8 @@ a {
         background-attachment: fixed;
         background-repeat: no-repeat;
         background-color: #1a1a1a;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
     }
 }
 

@@ -84,19 +84,40 @@ body {
     font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     line-height: 1.6;
     color: #ffffff;
-    background: url('Lataukset/hero.png') center/cover no-repeat;
     background-color: #1a1a1a;
-    background-attachment: fixed;
     margin: 0;
     padding: 0;
     width: 100%;
     overflow-x: hidden;
+    position: relative;
 }
 
-/* Better mobile support for background-attachment */
-@supports (background-attachment: fixed) {
-    body {
-        background-attachment: fixed;
+/* Background Image Element - Works on iOS */
+.hero-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('Lataukset/hero.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #1a1a1a;
+    z-index: -1;
+}
+
+/* Medium tablets */
+@media (min-width: 768px) and (max-width: 1150px) {
+    .hero-bg {
+        background-image: url('Lataukset/heromobibig.png');
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .hero-bg {
+        background-image: url('Lataukset/heromobibig.png');
     }
 }
 
@@ -1195,37 +1216,7 @@ a {
 }
 
 /* Responsive Design */
-@media (min-width: 768px) and (max-width: 1150px) {
-    body {
-        background-image: url('Lataukset/heromobibig.png');
-        background-size: cover;
-        background-position: center center;
-        background-attachment: fixed;
-        background-repeat: no-repeat;
-    }
-}
-
 @media (max-width: 768px) {
-    body {
-        background-image: url('Lataukset/heromobibig.png');
-        background-size: cover;
-        background-position: center center;
-        background-attachment: fixed;
-        background-repeat: no-repeat;
-        background-color: #1a1a1a;
-        -webkit-transform: translate3d(0, 0, 0);
-        transform: translate3d(0, 0, 0);
-    }
-}
-
-/* Retina displays - better image quality for high-dpi screens */
-@media (max-width: 768px) and (-webkit-min-device-pixel-ratio: 2),
-       (max-width: 768px) and (min-resolution: 192dpi) {
-    body {
-        background-image: url('Lataukset/heromobibig.png');
-        background-size: cover;
-    }
-    
     body, html {
         width: 100%;
         max-width: 100%;
@@ -1343,26 +1334,6 @@ a {
 }
 
 @media (max-width: 480px) {
-    body {
-        background-image: url('Lataukset/heromobibig.png');
-        background-size: cover;
-        background-position: center center;
-        background-attachment: fixed;
-        background-repeat: no-repeat;
-        background-color: #1a1a1a;
-        -webkit-transform: translate3d(0, 0, 0);
-        transform: translate3d(0, 0, 0);
-    }
-}
-
-/* Retina displays for small screens too */
-@media (max-width: 480px) and (-webkit-min-device-pixel-ratio: 2),
-       (max-width: 480px) and (min-resolution: 192dpi) {
-    body {
-        background-image: url('Lataukset/heromobibig.png');
-        background-size: cover;
-    }
-    
     .hamburger {
         display: flex;
     }

@@ -1,5 +1,34 @@
 /* Calculator Specific Styles */
 
+/* Background Image Element - Works on iOS */
+.hero-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('Lataukset/hero1.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #1a1a1a;
+    z-index: -1;
+}
+
+/* Medium size background (500px-1090px) */
+@media (max-width: 1090px) {
+    .hero-bg {
+        background-image: url('Lataukset/hintalaskuribig.png');
+    }
+}
+
+/* Mobile background (under 500px) */
+@media (max-width: 500px) {
+    .hero-bg {
+        background-image: url('Lataukset/hintalaskurimobile.png');
+    }
+}
+
 /* Back Button */
 .back-button-container {
     position: fixed;

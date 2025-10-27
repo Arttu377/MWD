@@ -85,11 +85,20 @@
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="Lataukset/logo.png">
     
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Preload critical resources -->
+    <link rel="preload" as="image" href="Lataukset/logo.png">
+    <link rel="preload" as="image" href="Lataukset/hero.png" media="(min-width: 1151px)">
+    <link rel="preload" as="image" href="Lataukset/heromobibig.png" media="(min-width: 769px) and (max-width: 1150px)">
+    <link rel="preload" as="image" href="Lataukset/heromobile.png" media="(max-width: 768px)">
     
-    <!-- CSS -->
-    <link rel="stylesheet" href="styles.css">
+    <!-- Fonts - async loading with display=optional -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=optional" rel="stylesheet" media="print" onload="this.media='all'" />
+    <noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    </noscript>
+    
+    <!-- CSS - inline critical CSS for faster rendering -->
+    <link rel="stylesheet" href="styles.css" media="all">
     
     <!-- Google Maps API -->
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAew9sxz1TN4Ee8zu_TKXtnelpUx2xo34o&callback=initMapFull"></script>
@@ -323,7 +332,7 @@
                 <a href="https://omaverkkoturva.fi" target="_blank" style="text-decoration: none; color: inherit;">
                     <div class="portfolio-item" data-category="web">
                         <div class="portfolio-image">
-                            <img src="Lataukset/omaverkko.png" alt="Verkkosivut - Omaverkkoturva.fi verkkoturvallisuuspalvelu - Portfolio projekti" class="portfolio-img" loading="eager">
+                            <img src="Lataukset/omaverkko.png" alt="Verkkosivut - Omaverkkoturva.fi verkkoturvallisuuspalvelu - Portfolio projekti" class="portfolio-img" loading="lazy">
                         </div>
                     </div>
                 </a>
@@ -331,7 +340,7 @@
                 <a href="https://telendor.fi" target="_blank" style="text-decoration: none; color: inherit;">
                     <div class="portfolio-item" data-category="web">
                         <div class="portfolio-image">
-                            <img src="Lataukset/telendor.png" alt="Verkkosivut - Telendor.fi web-sovellus - Portfolio projekti" class="portfolio-img" loading="eager">
+                            <img src="Lataukset/telendor.png" alt="Verkkosivut - Telendor.fi web-sovellus - Portfolio projekti" class="portfolio-img" loading="lazy">
                         </div>
                     </div>
                 </a>
@@ -339,7 +348,7 @@
                 <a href="https://joenlaitehuolto.fi" target="_blank" style="text-decoration: none; color: inherit;">
                     <div class="portfolio-item" data-category="web">
                         <div class="portfolio-image">
-                            <img src="Lataukset/joenlaitehuolto.png" alt="Verkkosivut - Joenlaitehuolto.fi huoltopalvelu - Portfolio projekti" class="portfolio-img" loading="eager">
+                            <img src="Lataukset/joenlaitehuolto.png" alt="Verkkosivut - Joenlaitehuolto.fi huoltopalvelu - Portfolio projekti" class="portfolio-img" loading="lazy">
                         </div>
                     </div>
                 </a>
@@ -455,7 +464,7 @@
     </footer>
 
     <!-- JavaScript -->
-    <script src="script.js"></script>
-    <script src="particles.js"></script>
+    <script src="script.js" defer></script>
+    <script src="particles.js" defer></script>
 </body>
 </html>

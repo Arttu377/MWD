@@ -1,17 +1,18 @@
 // Portfolio JavaScript
-document.addEventListener("DOMContentLoaded", function() {
-    // Hide loading screen
-    window.addEventListener('load', function() {
-        const loadingScreen = document.getElementById('loadingScreen');
-        if (loadingScreen) {
+// Hide loading screen
+window.addEventListener('load', function() {
+    const loadingScreen = document.getElementById('loadingScreen');
+    if (loadingScreen) {
+        setTimeout(function() {
+            loadingScreen.classList.add('hidden');
             setTimeout(function() {
-                loadingScreen.classList.add('hidden');
-                setTimeout(function() {
-                    loadingScreen.style.display = 'none';
-                }, 300);
-            }, 100);
-        }
-    });
+                loadingScreen.style.display = 'none';
+            }, 300);
+        }, 0);
+    }
+});
+
+document.addEventListener("DOMContentLoaded", function() {
 
     // Mobile Navigation Toggle
     const hamburger = document.querySelector(".hamburger");

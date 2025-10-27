@@ -49,8 +49,11 @@
     <link rel="preload" as="image" href="Lataukset/hintalaskuribig.png" media="(max-width: 1090px) and (min-width: 501px)">
     <link rel="preload" as="image" href="Lataukset/hintalaskurimobile.png" media="(max-width: 500px)">
     
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Fonts - async loading with display=optional -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=optional" rel="stylesheet" media="print" onload="this.media='all'" />
+    <noscript>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    </noscript>
     
     <!-- CSS -->
     <link rel="stylesheet" href="styles.css" media="print" onload="this.media='all'">

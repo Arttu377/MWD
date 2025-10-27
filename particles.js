@@ -83,14 +83,14 @@ class ParticlesAnimation {
             if (distance < 150 && distance > 0) {
                 const force = (150 - distance) / 150;
                 // Add repulse effect on top of existing velocity
-                particle.vx += (dx / distance) * force * 1.5;
-                particle.vy += (dy / distance) * force * 1.5;
+                particle.vx += (dx / distance) * force * 2.5;
+                particle.vy += (dy / distance) * force * 2.5;
             }
             
             // Limit velocity only when mouse interaction happens
             if (distance < 150) {
-                particle.vx = Math.max(-2, Math.min(2, particle.vx));
-                particle.vy = Math.max(-2, Math.min(2, particle.vy));
+                particle.vx = Math.max(-3.5, Math.min(3.5, particle.vx));
+                particle.vy = Math.max(-3.5, Math.min(3.5, particle.vy));
             } else {
                 // Keep slow velocity for normal movement with minimum speed
                 const minSpeed = 0.15;

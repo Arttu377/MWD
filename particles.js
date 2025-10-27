@@ -153,7 +153,7 @@ class ParticlesAnimation {
 // Initialize on page load
 document.addEventListener('DOMContentLoaded', () => {
     new ParticlesAnimation('particles-canvas', {
-        particleCount: 100,
+        particleCount: 50,
         particleColor: '#a5b4fc',
         lineColor: '#c7d2fe',
         lineDistance: 150,

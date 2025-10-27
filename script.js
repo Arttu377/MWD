@@ -8,8 +8,8 @@ document.addEventListener("DOMContentLoaded", function() {
                 loadingScreen.classList.add('hidden');
                 setTimeout(function() {
                     loadingScreen.style.display = 'none';
-                }, 500);
-            }, 300);
+                }, 300);
+            }, 100);
         }
     });
 
@@ -198,44 +198,49 @@ document.addEventListener("DOMContentLoaded", function() {
     initMapFull();
 });
 
-// Google Maps initialization
-// Full width Google Maps initialization
-function initMapFull() {
-    // Check if map element exists
-    const mapElement = document.getElementById('map-full');
-    if (!mapElement) return;
-    
-    // Rajakatu, Jyväskylä coordinates
-    const jyvaskyla = { lat: 62.2405, lng: 25.7440 };
-    
-    // Create map with disabled controls
-    const map = new google.maps.Map(mapElement, {
-        zoom: 10,
-        center: jyvaskyla,
-        mapTypeId: 'roadmap',
-        disableDefaultUI: true,
-        zoomControl: false,
-        mapTypeControl: false,
-        scaleControl: false,
-        streetViewControl: false,
-        rotateControl: false,
-        fullscreenControl: false,
-        gestureHandling: 'greedy'
-    });
-    
-    // Add marker
-    const marker = new google.maps.Marker({
-        position: jyvaskyla,
-        map: map,
-        title: 'Rajakatu, Jyväskylä',
-        icon: {
-            url: 'data:image/svg+xml;charset=UTF-8,' + encodeURIComponent(`
-                <svg width="30" height="30" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M15 0C6.7 0 0 6.7 0 15s15 15 15 15 15-6.7 15-15S23.3 0 15 0z" fill="#ff4444"/>
-                    <circle cx="15" cy="15" r="6" fill="#ffffff"/>
-                </svg>
-            `),
-            scaledSize: new google.maps.Size(30, 30)
+// Google Maps initialization - Make it global
+window.initMapFull = function() {
+    // Wait for DOM to be ready
+    setTimeout(function() {
+        // Check if map element exists
+        const mapElement = document.getElementById('map-full');
+        if (!mapElement) {
+            console.log('Map element not found');
+            return;
         }
-    });
+        
+        // Rajakatu, Jyväskylä coordinates
+        const jyvaskyla = { lat: 62.2405, lng: 25.7440 };
+        
+        // Create map with disabled controls
+        const map = new google.maps.Map(mapElement, {
+            zoom: 10,
+            center: jyvaskyla,
+            mapTypeId: 'roadmap',
+            disableDefaultUI: true,
+            zoomControl: false,
+            mapTypeControl: false,
+            scaleControl: false,
+            streetViewControl: false,
+            rotateControl: false,
+            fullscreenControl: false,
+            gestureHandling: 'greedy'
+        });
+        
+        // Add marker
+        const marker = new google.maps.Marker({
+            position: jyvaskyla,
+            map: map,
+            title: 'Rajakatu, Jyväskylä',
+            icon: {
+                url: 'data:image/svg+xml;charset=UTF-8,' + encodeURIComponent(`
+                    <svg width="30" height="30" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M15 0C6.7 0 0 6.7 0 15s15 15 15 15 15-6.7 15-15S23.3 0 15 0z" fill="#ff4444"/>
+                        <circle cx="15" cy="15" r="6" fill="#ffffff"/>
+                    </svg>
+                `),
+                scaledSize: new google.maps.Size(30, 30)
+            }
+        });
+    }, 100);
 }

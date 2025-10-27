@@ -8,8 +8,8 @@ document.addEventListener("DOMContentLoaded", function() {
                 loadingScreen.classList.add('hidden');
                 setTimeout(function() {
                     loadingScreen.style.display = 'none';
-                }, 500);
-            }, 300);
+                }, 300);
+            }, 100);
         }
     });
 

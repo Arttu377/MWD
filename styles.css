@@ -85,7 +85,7 @@ body {
     line-height: 1.6;
     color: #ffffff;
     background: url('Lataukset/hero.png') center/cover no-repeat fixed;
-    background-color: #667eea;
+    background-color: #1a1a1a;
     margin: 0;
     padding: 0;
     width: 100%;
@@ -1199,7 +1199,7 @@ a {
 
 @media (max-width: 768px) {
     body {
-        background-image: url('Lataukset/heromobile.png');
+        background-image: url('Lataukset/heromobibig.png');
         background-size: cover;
         background-position: center center;
         background-attachment: fixed;
@@ -1212,7 +1212,7 @@ a {
 @media (max-width: 768px) and (-webkit-min-device-pixel-ratio: 2),
        (max-width: 768px) and (min-resolution: 192dpi) {
     body {
-        background-image: url('Lataukset/heromobile.png');
+        background-image: url('Lataukset/heromobibig.png');
         background-size: cover;
     }
     
@@ -1334,7 +1334,7 @@ a {
 
 @media (max-width: 480px) {
     body {
-        background-image: url('Lataukset/heromobile.png');
+        background-image: url('Lataukset/heromobibig.png');
         background-size: cover;
         background-position: center center;
         background-attachment: fixed;
@@ -1347,7 +1347,7 @@ a {
 @media (max-width: 480px) and (-webkit-min-device-pixel-ratio: 2),
        (max-width: 480px) and (min-resolution: 192dpi) {
     body {
-        background-image: url('Lataukset/heromobile.png');
+        background-image: url('Lataukset/heromobibig.png');
         background-size: cover;
     }
     

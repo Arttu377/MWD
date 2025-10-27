@@ -192,6 +192,7 @@ p {
     .site-logo {
         top: 10px;
         left: 10px;
+        z-index: 1002;
     }
     
     .logo-image {
@@ -1203,6 +1204,7 @@ a {
         background-position: center center;
         background-attachment: fixed;
         background-repeat: no-repeat;
+        background-color: #1a1a1a;
     }
 }
 
@@ -1212,8 +1214,6 @@ a {
     body {
         background-image: url('Lataukset/heromobile.png');
         background-size: cover;
-        image-rendering: -webkit-optimize-contrast;
-        image-rendering: crisp-edges;
     }
     
     body, html {
@@ -1339,6 +1339,7 @@ a {
         background-position: center center;
         background-attachment: fixed;
         background-repeat: no-repeat;
+        background-color: #1a1a1a;
     }
 }
 
@@ -1348,8 +1349,6 @@ a {
     body {
         background-image: url('Lataukset/heromobile.png');
         background-size: cover;
-        image-rendering: -webkit-optimize-contrast;
-        image-rendering: crisp-edges;
     }
     
     .hamburger {

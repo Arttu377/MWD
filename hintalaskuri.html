@@ -9,11 +9,16 @@
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="Lataukset/logo.png">
     
+    <!-- Preload critical resources -->
+    <link rel="preload" as="image" href="Lataukset/hero1.png" media="(min-width: 1091px)">
+    <link rel="preload" as="image" href="Lataukset/hintalaskuribig.png" media="(max-width: 1090px) and (min-width: 501px)">
+    <link rel="preload" as="image" href="Lataukset/hintalaskurimobile.png" media="(max-width: 500px)">
+    
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- CSS -->
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css" media="print" onload="this.media='all'">
     <link rel="stylesheet" href="calculator-styles.css">
 </head>
 <body>
@@ -99,7 +104,6 @@
 
 
     <!-- JavaScript -->
-    <script src="script.js"></script>
-    <script src="calculator.js"></script>
+    <script src="calculator.js" defer></script>
 </body>
 </html>

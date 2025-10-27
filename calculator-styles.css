@@ -61,8 +61,11 @@ body {
 @media (max-width: 500px) {
     body {
         background-image: url('Lataukset/hintalaskurimobile.png');
+        background-color: #1a1a1a;
     }
 }
+
+/* Retina optimization for mobile - removed crisp-edges to prevent pixelated look */
 
 .calculator-section {
     min-height: 100vh;

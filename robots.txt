@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://arttu377.github.io/MWD/sitemap.xml
+

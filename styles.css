@@ -1218,6 +1218,22 @@ a {
 }
 
 /* Responsive Design */
+/* Tablets (480px-1150px) - 2 columns */
+@media (min-width: 481px) and (max-width: 1150px) {
+    .portfolio-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    
+    .portfolio-image {
+        height: auto;
+        min-height: unset;
+    }
+    
+    .portfolio-img {
+        aspect-ratio: auto;
+    }
+}
+
 @media (max-width: 768px) {
     body, html {
         width: 100%;

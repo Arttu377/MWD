@@ -105,14 +105,14 @@ body {
     background-repeat: no-repeat;
     background-color: #1a1a1a;
     z-index: -1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
 }
 
 /* Medium tablets */
 @media (min-width: 768px) and (max-width: 1150px) {
     .hero-bg {
         background-image: url('Lataukset/heromobibig.png');
-        -webkit-transform: translate3d(0, 0, 0);
-        transform: translate3d(0, 0, 0);
     }
 }
 
@@ -120,8 +120,6 @@ body {
 @media (max-width: 768px) {
     .hero-bg {
         background-image: url('Lataukset/heromobile.png');
-        -webkit-transform: translate3d(0, 0, 0);
-        transform: translate3d(0, 0, 0);
     }
 }
 

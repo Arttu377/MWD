@@ -15,17 +15,21 @@
     z-index: -1;
 }
 
-/* Medium size background (500px-1090px) */
-@media (max-width: 1090px) {
+/* Tablets (500px-1090px) */
+@media (min-width: 501px) and (max-width: 1090px) {
     .hero-bg {
         background-image: url('Lataukset/hintalaskuribig.png');
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
     }
 }
 
-/* Mobile background (under 500px) */
+/* Mobile (under 500px) */
 @media (max-width: 500px) {
     .hero-bg {
         background-image: url('Lataukset/hintalaskurimobile.png');
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
     }
 }
 
@@ -72,31 +76,11 @@
 }
 
 body {
-    background-image: url('Lataukset/hero1.png');
-    background-attachment: fixed;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-}
-
-/* Medium size background (500px-1090px) */
-@media (max-width: 1090px) {
-    body {
-        background-image: url('Lataukset/hintalaskuribig.png');
-    }
-}
-
-/* Mobile background (under 500px) */
-@media (max-width: 500px) {
-    body {
-        background-image: url('Lataukset/hintalaskurimobile.png');
-        background-attachment: fixed;
-        background-color: #1a1a1a;
-        -webkit-transform: translate3d(0, 0, 0);
-        transform: translate3d(0, 0, 0);
-    }
+    background-color: #1a1a1a;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    position: relative;
 }
 
 /* Retina optimization for mobile - removed crisp-edges to prevent pixelated look */

@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ammattimainen verkkosivujen suunnittelu ja toteutus Jyväskylästä. Räätälöidyt verkkosivut, SEO-optimointi ja moderni web-kehitys.">
+    <meta name="keywords" content="verkkosivut, web-kehitys, SEO, Jyväskylä, portfolio, suunnittelu, toteutus">
+    <meta name="author" content="Verkkosivujen Suunnittelija">
+    <title>Ammattimaiset verkkosivut | Saat hinta-arvion alle minuutissa</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="Lataukset/logo.png">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Google Maps API -->
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAew9sxz1TN4Ee8zu_TKXtnelpUx2xo34o&callback=initMap"></script>
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-content">
+            <div class="loading-spinner"></div>
+            <p class="loading-text">Latautuu...</p>
+        </div>
+    </div>
+
+    <!-- Logo -->
+    <div class="site-logo">
+        <img src="Lataukset/logo.png" alt="Logo" class="logo-image">
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <button class="hamburger" aria-label="Menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link" title="Koti">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+                        </svg>
+                        <span class="nav-text">Koti</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link" title="Minusta">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                        </svg>
+                        <span class="nav-text">Minusta</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#services" class="nav-link" title="Palvelut">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M3 3h8v8H3V3zm10 0h8v8h-8V3zM3 13h8v8H3v-8zm10 0h8v8h-8v-8z"/>
+                        </svg>
+                        <span class="nav-text">Palvelut</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#portfolio" class="nav-link" title="Projektit">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"/>
+                            <rect x="4" y="2" width="16" height="20" rx="2"/>
+                        </svg>
+                        <span class="nav-text">Projektit</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link" title="Yhteystiedot">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                        </svg>
+                        <span class="nav-text">Yhteystiedot</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <canvas id="particles-canvas" class="particles-canvas"></canvas>
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span class="highlight-white">Verkkosivujen</span> 
+                    <span class="highlight-violet">suunnittelua ja kehitystä yrityksille</span>
+                    <span class="highlight-white">ympäri Suomen</span>
+                </h1>
+                <p class="hero-description">
+                    Suunnittelen ja toteutan verkkosivut yrityksesi tarpeiden mukaan. 
+                    Panostan nykyaikaiseen ulkoasuun, sujuvaan toimivuuteen ja sisältöön, 
+                    joka on helposti löydettävissä verkossa.
+                </p>
+                <div class="hero-buttons">
+                    <a href="hintalaskuri.html" class="btn btn-primary">Laske verkkosivuillesi hinta</a>
+                    <a href="#contact" class="btn btn-secondary">Ota yhteyttä</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <h2>Minusta</h2>
+                <p>Verkkosivujen suunnittelun ja toteutuksen osaaja Jyväskylästä</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Asiakaslähtöinen kehitys</h3>
+                    <p>
+                        Olen verkkosivujen kehittäjä, joka suunnittelee ja toteuttaa 
+                        sivustoja asiakkaan tarpeiden ja toiveiden pohjalta. Tavoitteenani 
+                        on luoda verkkosivuja, jotka tukevat käyttäjän tavoitteita ja 
+                        toimivat luotettavasti eri laitteilla.
+                    </p>
+                    <p>
+                        Osaamiseni kattaa koko verkkosivujen kehitysprosessin suunnittelusta 
+                        toteutukseen sekä hakukoneoptimointiin. Rakennan sivustoja, jotka 
+                        vastaavat asiakkaan toivetta sekä teknisesti että visuaalisesti.
+                    </p>
+                    <div class="skills">
+                        <div class="skill-item">
+                            <h4>Verkkosivujen-kehitys</h4>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="95%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <h4>Käyttöliittymä/käyttäjäkokemus suunnittelu</h4>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <h4>SEO-optimointi</h4>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="85%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <div class="about-placeholder">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>Palvelut</h2>
+                <p>Mitä voin tehdä yrityksellesi</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                            <line x1="8" y1="21" x2="16" y2="21"/>
+                            <line x1="12" y1="17" x2="12" y2="21"/>
+                        </svg>
+                    </div>
+                    <h3>Verkkosivujen Suunnittelu</h3>
+                    <p>
+                        Suunnittelen modernit ja käyttäjäystävälliset verkkosivut, 
+                        jotka kertovat yrityksesi tarinan tehokkaasti.
+                    </p>
+                    <ul class="service-features">
+                        <li>Responsiivinen design</li>
+                        <li>Käyttökokemuksen optimointi</li>
+                        <li>Visuaalinen identiteetti</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="16 18 22 12 16 6"/>
+                            <polyline points="8 6 2 12 8 18"/>
+                        </svg>
+                    </div>
+                    <h3>Räätälöity Toteutus</h3>
+                    <p>
+                        Toteutan verkkosivut oikealla koodilla, optimoiden suorituskyvyn 
+                        ja varmistaen laadukkaan lopputuloksen.
+                    </p>
+                    <ul class="service-features">
+                        <li>Nopea latausaika</li>
+                        <li>Selain- ja mobiiliyhteensopivuus</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="3"/>
+                            <path d="M12 1v6m0 6v6m11-7h-6m-6 0H1"/>
+                        </svg>
+                    </div>
+                    <h3>SEO-optimointi</h3>
+                    <p>
+                        Optimoin sivusi hakukoneille, jotta asiakkaat löytävät 
+                        yrityksesi helposti Google-hauista.
+                    </p>
+                    <ul class="service-features">
+                        <li>Tekninen SEO</li>
+                        <li>Sisällön optimointi</li>
+                        <li>Paikallinen SEO</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="services-cta">
+                <a href="hintalaskuri.html" class="btn btn-primary btn-large">Laske hinta-arvio verkkosivuillesi</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projektit Section -->
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <div class="section-header">
+                <h2>Projektit</h2>
+                <p>Esimerkkejä verkkosivu-töistäni</p>
+            </div>
+            <div class="portfolio-filter">
+                <button class="filter-btn active" data-filter="web">Verkkosivut</button>
+            </div>
+            <div class="portfolio-grid">
+                <a href="https://omaverkkoturva.fi" target="_blank" style="text-decoration: none; color: inherit;">
+                    <div class="portfolio-item" data-category="web">
+                        <div class="portfolio-image">
+                            <img src="Lataukset/omaverkko.png" alt="Omaverkkoturva.fi - Verkkoturvallisuuspalvelu" class="portfolio-img">
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="https://telendor.fi" target="_blank" style="text-decoration: none; color: inherit;">
+                    <div class="portfolio-item" data-category="web">
+                        <div class="portfolio-image">
+                            <img src="Lataukset/telendor.png" alt="Telendor.fi - Web-sovellus" class="portfolio-img">
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="https://joenlaitehuolto.fi" target="_blank" style="text-decoration: none; color: inherit;">
+                    <div class="portfolio-item" data-category="web">
+                        <div class="portfolio-image">
+                            <img src="Lataukset/joenlaitehuolto.png" alt="Joenlaitehuolto.fi" class="portfolio-img">
+                        </div>
+                    </div>
+                </a>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Ota yhteyttä</h2>
+                <p>Suunnitteletko uuden verkkosivun käynnistämistä tai nykyisen uudistusta?<br>Ota yhteyttä, niin autan.</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Sijainti</h4>
+                            <p>Jyväskylä, Suomi</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Sähköposti</h4>
+                            <p>yhteys@portfolio.fi</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                            </svg>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Puhelin</h4>
+                            <p>+358 41 310 1668</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-map">
+                    <div id="map-full" class="google-map-full"></div>
+                </div>
+                
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="company">Yrityksen nimi</label>
+                            <input type="text" id="company" name="company" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Sähköposti</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Puhelinnumero</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Viesti</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Lähetä viesti</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Projektit</h3>
+                    <p>Verkkosivujen suunnittelu ja toteutus kaiken kokoisille yrityksille</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Palvelut</h4>
+                    <ul>
+                        <li><a href="#services">Verkkosivujen suunnittelu</a></li>
+                        <li><a href="#services">Räätälöity toteutus</a></li>
+                        <li><a href="#services">SEO-optimointi</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Yhteystiedot</h4>
+                    <p>Jyväskylä, Suomi</p>
+                    <p>yhteys@portfolio.fi</p>
+                    <p>+358 41 310 1668</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Portfolio. Kaikki oikeudet pidätetään.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+    <script src="particles.js"></script>
+</body>
+</html>

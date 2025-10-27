@@ -1,0 +1,526 @@
+/* Calculator Specific Styles */
+
+/* Back Button */
+.back-button-container {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+}
+
+.back-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1.5rem;
+    background: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(15px);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.back-button:hover {
+    background: rgba(255, 255, 255, 0.4);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 255, 255, 0.3);
+    color: #ffffff;
+}
+
+.back-button svg {
+    width: 20px;
+    height: 20px;
+    transition: transform 0.3s ease;
+}
+
+.back-button:hover svg {
+    transform: translateX(-3px);
+}
+
+body {
+    background-image: url('Lataukset/hero1.png');
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* Medium size background (500px-1090px) */
+@media (max-width: 1090px) {
+    body {
+        background-image: url('Lataukset/hintalaskuribig.png');
+    }
+}
+
+/* Mobile background (under 500px) */
+@media (max-width: 500px) {
+    body {
+        background-image: url('Lataukset/hintalaskurimobile.png');
+    }
+}
+
+.calculator-section {
+    min-height: 100vh;
+    padding: 60px 0 30px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.calculator-container {
+    width: 100%;
+    max-width: 700px;
+    padding: 0 20px;
+}
+
+.calculator-window {
+    background: transparent;
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(30px);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.calculator-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.calculator-header h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.calculator-header p {
+    font-size: 1.1rem;
+    color: #ffffff;
+    line-height: 1.6;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* Progress Bar */
+.progress-container {
+    margin-bottom: 3rem;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    background: #e9ecef;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 1rem;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 4px;
+    transition: width 0.5s ease;
+    width: 12.5%; /* 1/8 = 12.5% */
+}
+
+.progress-text {
+    font-size: 0.9rem;
+    color: #ffffff;
+    font-weight: 500;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* Question Styles */
+.question-container {
+    margin-bottom: 2rem;
+    min-height: 250px;
+}
+
+.question {
+    display: none;
+    animation: fadeInUp 0.5s ease;
+}
+
+.question.active {
+    display: block;
+}
+
+.question h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 1rem;
+    line-height: 1.4;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.question p {
+    font-size: 0.95rem;
+    color: #ffffff;
+    margin-bottom: 1.5rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.options-container {
+    display: grid;
+    gap: 1rem;
+}
+
+.option {
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    border-radius: 12px;
+    padding: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    backdrop-filter: blur(10px);
+}
+
+.option:hover {
+    border-color: #ffffff;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+}
+
+.option.selected {
+    border-color: #ffffff;
+    background: rgba(255, 255, 255, 0.4);
+    box-shadow: 0 5px 20px rgba(255, 255, 255, 0.3);
+}
+
+.option input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.option-label {
+    display: block;
+    font-weight: 500;
+    color: #ffffff;
+    cursor: pointer;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.option-description {
+    font-size: 0.9rem;
+    color: #ffffff;
+    margin-top: 0.5rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* Email Input */
+.email-input {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    border-radius: 12px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+    font-family: inherit;
+    background: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    backdrop-filter: blur(10px);
+}
+
+.email-input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.email-input:focus {
+    outline: none;
+    border-color: #ffffff;
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.2);
+}
+
+.email-input.error {
+    border-color: #dc3545;
+}
+
+.error-message {
+    color: #dc3545;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    display: none;
+}
+
+/* Navigation Buttons */
+.navigation-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.navigation-buttons .btn {
+    min-width: 120px;
+}
+
+/* Results Styles */
+.results-container {
+    text-align: center;
+    animation: fadeInUp 0.5s ease;
+}
+
+.results-header h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.results-header p {
+    font-size: 1.1rem;
+    color: #ffffff;
+    margin-bottom: 2rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.price-display {
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 15px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(20px);
+}
+
+.price-range {
+    margin-bottom: 1.5rem;
+}
+
+.price-label {
+    font-size: 1.2rem;
+    color: #ffffff;
+    display: block;
+    margin-bottom: 0.5rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.price-amount {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #ffffff;
+    display: block;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.price-disclaimer {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.price-disclaimer p {
+    font-size: 0.9rem;
+    color: #ffffff;
+    line-height: 1.6;
+    margin: 0;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.price-disclaimer strong {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.price-breakdown {
+    text-align: left;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-top: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(10px);
+}
+
+.price-breakdown h4 {
+    color: #ffffff;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.price-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.price-item:last-child {
+    border-bottom: none;
+    font-weight: 600;
+    color: #ffffff;
+    font-size: 1.1rem;
+    margin-top: 0.5rem;
+    padding-top: 1rem;
+    border-top: 2px solid rgba(255, 255, 255, 0.3);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.price-item-label {
+    color: #ffffff;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.price-item-value {
+    color: #ffffff;
+    font-weight: 500;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.maintenance-info {
+    background: rgba(255, 255, 255, 0.15);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    backdrop-filter: blur(20px);
+}
+
+.maintenance-info h3 {
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.maintenance-info p {
+    color: #ffffff;
+    margin: 0.5rem 0;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.disclaimer {
+    font-size: 0.9rem;
+    font-style: italic;
+}
+
+.disclaimer-box {
+    background: rgba(255, 255, 255, 0.15);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    backdrop-filter: blur(20px);
+}
+
+.disclaimer-box h4 {
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.disclaimer-box p {
+    color: #ffffff;
+    margin: 0;
+    font-size: 0.95rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.contact-cta {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.contact-cta .btn {
+    min-width: 180px;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .back-button-container {
+        top: 15px;
+        left: 15px;
+    }
+    
+    .back-button {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+    }
+    
+    .back-button svg {
+        width: 18px;
+        height: 18px;
+    }
+    .calculator-window {
+        padding: 2rem 1.5rem;
+        margin: 0 10px;
+    }
+    
+    .calculator-header h1 {
+        font-size: 2rem;
+    }
+    
+    .price-amount {
+        font-size: 2.5rem;
+    }
+    
+    .navigation-buttons {
+        flex-direction: column;
+    }
+    
+    .navigation-buttons .btn {
+        width: 100%;
+    }
+    
+    .contact-cta {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .contact-cta .btn {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .calculator-section {
+        padding: 80px 0 30px;
+    }
+    
+    .calculator-window {
+        padding: 1.5rem 1rem;
+    }
+    
+    .calculator-header h1 {
+        font-size: 1.8rem;
+    }
+    
+    .option {
+        padding: 1rem;
+    }
+    
+    .price-amount {
+        font-size: 2rem;
+    }
+}

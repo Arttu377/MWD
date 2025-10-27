@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Hanki hintalaskuri verkkosivujesi hinnoittelulle. Vastaa muutamaan kysymykseen ja saat heti hinta-arvion.">
+    <title>Hintalaskuri - Verkkosivujen Hinnoittelu</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="Lataukset/logo.png">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="calculator-styles.css">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-content">
+            <div class="loading-spinner"></div>
+            <p class="loading-text">Latautuu...</p>
+        </div>
+    </div>
+
+    <!-- Back Button -->
+    <div class="back-button-container">
+        <a href="index.html" class="back-button">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M19 12H5M12 19l-7-7 7-7"/>
+            </svg>
+            Takaisin etusivulle
+        </a>
+    </div>
+
+    <!-- Calculator Section -->
+    <section class="calculator-section">
+        <div class="calculator-container">
+            <div class="calculator-window">
+                <div class="calculator-header">
+                    <h1>Verkkosivujen Hintalaskuri</h1>
+                    <p>Vastaa muutamaan kysymykseen ja saat heti hinta-arvion verkkosivujesi toteutukselle</p>
+                </div>
+
+                <!-- Progress Bar -->
+                <div class="progress-container">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                    <span class="progress-text" id="progressText">Kysymys 1 / 8</span>
+                </div>
+
+                <!-- Question Container -->
+                <div class="question-container" id="questionContainer">
+                    <!-- Questions will be dynamically loaded here -->
+                </div>
+
+                <!-- Navigation Buttons -->
+                <div class="navigation-buttons">
+                    <button type="button" class="btn btn-secondary" id="prevBtn" style="display: none;">Edellinen</button>
+                    <button type="button" class="btn btn-primary" id="nextBtn">Seuraava</button>
+                </div>
+
+                <!-- Results Container -->
+                <div class="results-container" id="resultsContainer" style="display: none;">
+                    <div class="results-header">
+                        <h2>Hinta-arvio verkkosivujesi toteutukselle</h2>
+                        <p>Arvion perusteella olet vastannut kysymyksiin</p>
+                    </div>
+                    
+                    <div class="price-display">
+                        <div class="price-range">
+                            <span class="price-label">Arvioitu hinta:</span>
+                            <span class="price-amount" id="priceAmount">€</span>
+                        </div>
+                        
+                        <div class="price-disclaimer">
+                            <p><strong>Tärkeää huomioida:</strong><br>
+                            Nämä ovat vain hinta-arvioita. Lopullinen hinta määräytyy projektin yksityiskohtien mukaan. Ota yhteyttä saadaksesi tarkan tarjouksen!</p>
+                        </div>
+                    </div>
+
+                    <div class="maintenance-info">
+                        <h3>Ylläpito</h3>
+                        <p><strong>25€ - 99€/kk</strong></p>
+                        <p class="disclaimer">Hinta saattaa muuttua, jos projektiin sisältyy useita kolmannen osapuolen järjestelmiä</p>
+                    </div>
+
+                    <div class="contact-cta">
+                        <a href="index.html#contact" class="btn btn-primary btn-large">Hanki tarkka tarjous</a>
+                        <button type="button" class="btn btn-secondary" id="restartBtn">Aloita alusta</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+    <script src="calculator.js"></script>
+</body>
+</html>

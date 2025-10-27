@@ -23,8 +23,8 @@ document.addEventListener("DOMContentLoaded", function() {
             type: 'radio',
             options: [
                 { value: '1-3', label: '1-3 sivua', description: 'Kevyt sivusto - esimerkiksi yhden sivun "yhteenvetosivu" (etusivu, palvelut ja yhteystiedot samassa)', price: 0 },
-                { value: '4-7', label: '4-7 sivua', description: 'Perussivusto - etusivu + 2-4 palvelusivua + yhteystiedot ja mahdollinen "meistä"-osio', price: 200 },
-                { value: '8+', label: '8+ sivua', description: 'Laaja sivusto - yrityksen sivusto, jossa on useita palveluita, blogi, referenssit, uutiset tai kieliversiot', price: 500 }
+                { value: '4-7', label: '4-7 sivua', description: 'Perussivusto - etusivu + 2-4 palvelusivua + yhteystiedot ja mahdollinen "meistä"-osio', price: 160 },
+                { value: '8+', label: '8+ sivua', description: 'Laaja sivusto - yrityksen sivusto, jossa on useita palveluita, blogi, referenssit, uutiset tai kieliversiot', price: 400 }
             ]
         },
         {
@@ -34,9 +34,9 @@ document.addEventListener("DOMContentLoaded", function() {
             type: 'radio',
             options: [
                 { value: 'none', label: 'Ei tarvita', description: 'Vain perussivut', price: 0 },
-                { value: 'blog', label: 'Blogi', description: 'Blogi-ominaisuudet sivustolle', price: 300 },
-                { value: 'news', label: 'Uutisosio', description: 'Uutisosio sivustolle', price: 250 },
-                { value: 'both', label: 'Molemmat', description: 'Blogi ja uutisosio', price: 500 }
+                { value: 'blog', label: 'Blogi', description: 'Blogi-ominaisuudet sivustolle', price: 240 },
+                { value: 'news', label: 'Uutisosio', description: 'Uutisosio sivustolle', price: 200 },
+                { value: 'both', label: 'Molemmat', description: 'Blogi ja uutisosio', price: 400 }
             ]
         },
         {
@@ -46,8 +46,8 @@ document.addEventListener("DOMContentLoaded", function() {
             type: 'radio',
             options: [
                 { value: 'template', label: 'Valmis teema', description: 'Mukautettu valmis teema', price: 0 },
-                { value: 'custom', label: 'Räätälöity design', description: 'Täysin yksilöllinen ulkoasu', price: 400 },
-                { value: 'branding', label: 'Brändäys + design', description: 'Logo, värit, fontit + räätälöity design', price: 800 }
+                { value: 'custom', label: 'Räätälöity design', description: 'Täysin yksilöllinen ulkoasu', price: 320 },
+                { value: 'branding', label: 'Brändäys + design', description: 'Logo, värit, fontit + räätälöity design', price: 640 }
             ]
         },
         {
@@ -57,13 +57,13 @@ document.addEventListener("DOMContentLoaded", function() {
             type: 'checkbox',
             options: [
                 { value: 'none', label: 'Ei tarvita', description: 'Vain perussivut ilman erityistoimintoja', price: 0 },
-                { value: 'contact', label: 'Yhteydenottolomake', description: 'Perus lomake sähköpostin lähettämiseen', price: 100 },
-                { value: 'booking', label: 'Tilauslomake', description: 'Ajanvaraus tai tilausjärjestelmä', price: 200 },
-                { value: 'map', label: 'Kartta', description: 'Google Maps integraatio', price: 50 },
-                { value: 'payment', label: 'Maksut / verkkokauppa', description: 'Verkkokauppa ja maksujärjestelmä', price: 600 },
-                { value: 'users', label: 'Käyttäjätilit', description: 'Rekisteröityminen ja kirjautuminen', price: 300 },
-                { value: 'social', label: 'Sosiaalisen median integraatio', description: 'Facebook, Instagram, Twitter yhteys', price: 150 },
-                { value: 'newsletter', label: 'Uutiskirje', description: 'Uutiskirjeen tilausjärjestelmä', price: 200 }
+                { value: 'contact', label: 'Yhteydenottolomake', description: 'Perus lomake sähköpostin lähettämiseen', price: 80 },
+                { value: 'booking', label: 'Tilauslomake', description: 'Ajanvaraus tai tilausjärjestelmä', price: 160 },
+                { value: 'map', label: 'Kartta', description: 'Google Maps integraatio', price: 40 },
+                { value: 'payment', label: 'Maksut / verkkokauppa', description: 'Verkkokauppa ja maksujärjestelmä', price: 480 },
+                { value: 'users', label: 'Käyttäjätilit', description: 'Rekisteröityminen ja kirjautuminen', price: 240 },
+                { value: 'social', label: 'Sosiaalisen median integraatio', description: 'Facebook, Instagram, Twitter yhteys', price: 120 },
+                { value: 'newsletter', label: 'Uutiskirje', description: 'Uutiskirjeen tilausjärjestelmä', price: 160 }
             ]
         },
         {
@@ -73,21 +73,21 @@ document.addEventListener("DOMContentLoaded", function() {
             type: 'radio',
             options: [
                 { value: 'provided', label: 'Toimitetaan valmiina', description: 'Sisältö toimitetaan valmiina', price: 0 },
-                { value: 'text', label: 'Tekstien tuotanto', description: 'Tekstien kirjoittaminen', price: 200 },
-                { value: 'images', label: 'Kuvien tuotanto', description: 'Kuvien ottaminen ja käsittely', price: 300 },
-                { value: 'video', label: 'Videoiden tuotanto', description: 'Videoiden tuotanto ja editointi', price: 500 },
-                { value: 'full', label: 'Täydellinen sisällöntuotanto', description: 'Tekstit, kuvat ja videot', price: 800 }
+                { value: 'text', label: 'Tekstien tuotanto', description: 'Tekstien kirjoittaminen', price: 160 },
+                { value: 'images', label: 'Kuvien tuotanto', description: 'Kuvien ottaminen ja käsittely', price: 240 },
+                { value: 'video', label: 'Videoiden tuotanto', description: 'Videoiden tuotanto ja editointi', price: 400 },
+                { value: 'full', label: 'Täydellinen sisällöntuotanto', description: 'Tekstit, kuvat ja videot', price: 640 }
             ]
         },
         {
             id: 'seo',
             title: 'Hakukoneoptimointi (SEO)',
-            description: 'Mitä tasoa hakukoneoptimointiin tarvitset?',
+            description: 'Mitä tasoa hakukoneoptimointiin tarvitset? Huomaa: Perusoptimointi (tekninen SEO ja perusasetukset) sisältyy perushintaan.',
             type: 'radio',
             options: [
-                { value: 'basic', label: 'Perusoptimointi', description: 'Tekninen SEO ja perusasetukset', price: 100 },
-                { value: 'advanced', label: 'Laajempi SEO', description: 'Avainsanatyö ja sisällön optimointi', price: 300 },
-                { value: 'comprehensive', label: 'Kattava SEO-strategia', description: 'Täydellinen SEO-analyysi ja toteutus', price: 600 }
+                { value: 'basic', label: 'Perusoptimointi (sisältyy)', description: 'Tekninen SEO ja perusasetukset - sisältyy perushintaan', price: 0 },
+                { value: 'advanced', label: 'Laajempi SEO', description: 'Avainsanatyö ja sisällön optimointi', price: 240 },
+                { value: 'comprehensive', label: 'Kattava SEO-strategia', description: 'Täydellinen SEO-analyysi ja toteutus', price: 480 }
             ]
         },
         {
@@ -102,7 +102,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // State management
     let currentStep = 0;
     let answers = {};
-    let totalPrice = 300; // Base price
+    let totalPrice = 300; // Base price (includes basic SEO optimization)
 
     // DOM elements
     const questionContainer = document.getElementById('questionContainer');

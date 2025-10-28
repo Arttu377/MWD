@@ -76,21 +76,21 @@ class ParticlesAnimation {
             const distance = Math.sqrt(dx * dx + dy * dy);
             
             // Apply friction/damping to slow down particles naturally
-            const friction = 0.98;
+            const friction = 0.985;
             particle.vx *= friction;
             particle.vy *= friction;
             
             if (distance < 150 && distance > 0) {
                 const force = (150 - distance) / 150;
                 // Add repulse effect on top of existing velocity
-                particle.vx += (dx / distance) * force * 2.5;
-                particle.vy += (dy / distance) * force * 2.5;
+                particle.vx += (dx / distance) * force * 4.5;
+                particle.vy += (dy / distance) * force * 4.5;
             }
             
             // Limit velocity only when mouse interaction happens
             if (distance < 150) {
-                particle.vx = Math.max(-3.5, Math.min(3.5, particle.vx));
-                particle.vy = Math.max(-3.5, Math.min(3.5, particle.vy));
+                particle.vx = Math.max(-6, Math.min(6, particle.vx));
+                particle.vy = Math.max(-6, Math.min(6, particle.vy));
             } else {
                 // Keep slow velocity for normal movement with minimum speed
                 const minSpeed = 0.15;

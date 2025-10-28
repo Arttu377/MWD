@@ -1,5 +1,33 @@
 /* Calculator Specific Styles */
 
+/* Ensure loading overlay is visible even before global styles load */
+.loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(15, 15, 20, 0.98);
+    z-index: 99999;
+}
+
+.loading-content { text-align: center; }
+.loading-text { color: #ffffff; font-weight: 600; letter-spacing: 2px; }
+.loading-spinner {
+    width: 48px;
+    height: 48px;
+    border: 3px solid rgba(255,255,255,0.2);
+    border-top-color: #ffffff;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+    margin: 0 auto 1rem;
+}
+
+@keyframes spin { 0% { transform: rotate(0); } 100% { transform: rotate(360deg); } }
+
 /* Background Image Element - Works on iOS */
 .hero-bg {
     position: fixed;
@@ -7,29 +35,27 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('Lataukset/hero1.png');
+    background-image: url('Lataukset/hero.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-color: #1a1a1a;
     z-index: -1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
 }
 
-/* Tablets (500px-1090px) */
-@media (min-width: 501px) and (max-width: 1090px) {
+/* Medium tablets (768px-1150px) */
+@media (min-width: 768px) and (max-width: 1150px) {
     .hero-bg {
-        background-image: url('Lataukset/hintalaskuribig.png');
-        -webkit-transform: translate3d(0, 0, 0);
-        transform: translate3d(0, 0, 0);
+        background-image: url('Lataukset/heromobibig.png');
     }
 }
 
-/* Mobile (under 500px) */
-@media (max-width: 500px) {
+/* Mobile (max-width: 768px) */
+@media (max-width: 768px) {
     .hero-bg {
-        background-image: url('Lataukset/hintalaskurimobile.png');
-        -webkit-transform: translate3d(0, 0, 0);
-        transform: translate3d(0, 0, 0);
+        background-image: url('Lataukset/heromobile.png');
     }
 }
 
@@ -81,6 +107,12 @@ body {
     padding: 0;
     overflow-x: hidden;
     position: relative;
+    animation: pageEnterFromRight 0.35s ease both;
+}
+
+@keyframes pageEnterFromRight {
+    from { opacity: 0; transform: translateX(60px); }
+    to { opacity: 1; transform: translateX(0); }
 }
 
 /* Retina optimization for mobile - removed crisp-edges to prevent pixelated look */
@@ -146,7 +178,7 @@ body {
 
 .progress-fill {
     height: 100%;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #4b5ec0 0%, #654aa0 100%);
     border-radius: 4px;
     transition: width 0.5s ease;
     width: 12.5%; /* 1/8 = 12.5% */

@@ -192,11 +192,58 @@ document.addEventListener("DOMContentLoaded", function() {
         fadeObserver.observe(element);
     });
     
+    // Slide-to-unlock CTA
+    const slideTrack = document.querySelector('.slide-track');
+    const slideHandle = document.getElementById('slideHandle');
+    if (slideTrack && slideHandle && window.PointerEvent) {
+        let dragging = false;
+        let offsetX = 0;
+        const maxX = () => slideTrack.clientWidth - slideHandle.clientWidth - 2;
+        const setX = x => {
+            const clamped = Math.max(2, Math.min(x, maxX()));
+            slideHandle.style.left = clamped + 'px';
+        };
+        const onPointerDown = e => {
+            dragging = true;
+            slideHandle.setPointerCapture(e.pointerId);
+            offsetX = e.clientX - slideHandle.getBoundingClientRect().left;
+            document.body.style.userSelect = 'none';
+        };
+        const onPointerMove = e => {
+            if (!dragging) return;
+            e.preventDefault();
+            const trackLeft = slideTrack.getBoundingClientRect().left;
+            const x = e.clientX - trackLeft - offsetX + 2; // +2 to account for left padding
+            setX(x);
+        };
+        const onPointerUp = () => {
+            if (!dragging) return;
+            dragging = false;
+            document.body.style.userSelect = '';
+            if (slideHandle.offsetLeft >= maxX() * 0.75) { // 75% threshold
+                slideTrack.classList.add('completed');
+                window.location.href = 'hintalaskuri.html';
+            } else {
+                slideHandle.style.transition = 'left 0.25s ease';
+                slideHandle.style.left = '2px';
+                setTimeout(() => { slideHandle.style.transition = ''; }, 260);
+            }
+        };
+        slideHandle.addEventListener('pointerdown', onPointerDown);
+        slideHandle.addEventListener('pointermove', onPointerMove);
+        slideHandle.addEventListener('pointerup', onPointerUp);
+        slideHandle.addEventListener('pointercancel', onPointerUp);
+        window.addEventListener('resize', () => setX(slideHandle.offsetLeft));
+    }
+
     console.log("%cTervetuloa portfolio-sivustolleni! 🚀", "color: #667eea; font-size: 16px; font-weight: bold;");
     console.log("%cJos olet kiinnostunut yhteistyöstä, ota yhteyttä!", "color: #666; font-size: 14px;");
     
     // Initialize Google Map
     initMapFull();
+
+    // Default navigation on CTA click (no custom animation)
+    // Removed custom slide/overlay handler to use standard link behavior
 });
 
 // Google Maps initialization - Make it global

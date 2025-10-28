@@ -3,12 +3,13 @@
 window.addEventListener('load', function() {
     const loadingScreen = document.getElementById('loadingScreen');
     if (loadingScreen) {
+        // Ensure loading is visible on entry for at least a brief moment
         setTimeout(function() {
             loadingScreen.classList.add('hidden');
             setTimeout(function() {
                 loadingScreen.style.display = 'none';
             }, 300);
-        }, 0);
+        }, 250);
     }
 });
 
